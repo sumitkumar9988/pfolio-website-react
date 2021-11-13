@@ -20,9 +20,7 @@ const greenlock = require("greenlock-express").create({
   version: "draft-11",
   configDir: path.join(__dirname, "acme"),
   approveDomains,
-  app: function (req, res) {
-    require('./app.js')(req, res);
-  },
+  app: app,
   communityMember: true,
   store,
   debug: process.env.NODE_ENV === "development",
